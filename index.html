@@ -1163,14 +1163,14 @@
           <div class="contact-icon">✉️</div>
           <div class="contact-item-text">
             <h4>Email</h4>
-            <p>vprestige6@gmail.com</p>
+            <p><a href="mailto:vprestige6@gmail.com" style="color: inherit; text-decoration: none;">vprestige6@gmail.com</a></p>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
           <div class="contact-item-text">
             <h4>Service Area</h4>
-            <p>Bay Area & Greater Region<br>We travel as far as Sacramento</p>
+            <p>Bay Area</p>
           </div>
         </div>
         <div class="contact-item">
@@ -1183,7 +1183,7 @@
       </div>
     </div>
     <div>
-      <form class="contact-form" id="quoteForm">
+      <form class="contact-form" id="quoteForm" autocomplete="on">
         <!-- Web3Forms settings — paste your access key below -->
         <input type="hidden" name="access_key" value="431a3b15-4948-4901-963d-2428d53eb865">
         <input type="hidden" name="subject" value="New Quote Request — Prestige Valet Co.">
@@ -1193,21 +1193,21 @@
         <div class="form-row">
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" name="firstName" placeholder="John" required>
+            <input type="text" name="firstName" placeholder="John" required autocomplete="given-name">
           </div>
           <div class="form-group">
             <label>Last Name</label>
-            <input type="text" name="lastName" placeholder="Smith" required>
+            <input type="text" name="lastName" placeholder="Smith" required autocomplete="family-name">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Email</label>
-            <input type="email" name="email" placeholder="you@example.com" required>
+            <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
           </div>
           <div class="form-group">
             <label>Phone</label>
-            <input type="tel" name="phone" placeholder="(555) 000-0000">
+            <input type="tel" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
           </div>
         </div>
         <div class="form-row">
