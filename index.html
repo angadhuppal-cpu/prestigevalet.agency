@@ -14,9 +14,9 @@
     --dark-2: #111111;
     --dark-3: #1A1A1A;
     --dark-4: #222222;
-    --off-white: #F5F0E8;
-    --muted: #888880;
-    --text: #D8D0C0;
+    --off-white: #FFFFFF;
+    --muted: #FFFFFF;
+    --text: #FFFFFF;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -128,7 +128,7 @@
     background:
       radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.06) 0%, transparent 70%),
       radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%),
-      linear-gradient(180deg, #0A0A0A 0%, #111008 50%, #0A0A0A 100%);
+      linear-gradient(180deg, #0A0A0A 0%, #000000 50%, #0A0A0A 100%);
   }
 
   .hero-line {
@@ -250,7 +250,7 @@
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    border: 1px solid rgba(245,240,232,0.25);
+    border: 1px solid rgba(255,255,255,0.25);
     cursor: pointer;
     transition: all 0.3s;
     text-decoration: none;
@@ -445,7 +445,7 @@
 
   .pricing-card.featured {
     border-color: var(--gold);
-    background: linear-gradient(160deg, #1A1500 0%, var(--dark-3) 100%);
+    background: linear-gradient(160deg, #000000 0%, var(--dark-3) 100%);
   }
 
   .pricing-card.featured::after {
@@ -599,7 +599,7 @@
 
   .why-box:nth-child(1) {
     inset: 0 60px 60px 0;
-    background: linear-gradient(135deg, #111008, #1A1500);
+    background: linear-gradient(135deg, #000000, #000000);
   }
 
   .why-box:nth-child(2) {
@@ -1288,7 +1288,7 @@
 
       if (data.success) {
         btn.textContent = "✦ Request Sent — We'll be in touch within 24 hours";
-        btn.style.background = '#2a1f00';
+        btn.style.background = '#000000';
         btn.style.color = 'var(--gold)';
         btn.style.border = '1px solid var(--gold)';
         quoteForm.reset();
