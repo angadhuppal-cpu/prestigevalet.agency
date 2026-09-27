@@ -672,60 +672,57 @@
     align-items: start;
   }
 
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  .contact-actions {
     margin-top: 48px;
-  }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-  .form-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
+    border: 1px solid rgba(201,168,76,0.2);
+    background: var(--dark-3);
+    padding: 48px 40px;
   }
 
-  .form-group label {
+  .contact-actions-label {
     font-size: 0.62rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
   }
 
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    background: var(--dark-3);
-    border: 1px solid rgba(201,168,76,0.15);
-    color: var(--text);
-    padding: 14px 18px;
-    font-family: 'Montserrat', sans-serif;
+  .contact-actions-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--off-white);
+  }
+
+  .contact-actions-body {
     font-size: 0.8rem;
-    font-weight: 300;
-    outline: none;
-    transition: border-color 0.3s;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .contact-btn {
+    display: block;
     width: 100%;
+    text-align: center;
+    text-decoration: none;
   }
 
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: var(--gold);
+  .contact-btn-outline {
+    padding: 16px 24px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: background 0.3s, color 0.3s;
   }
 
-  .form-group select {
-    appearance: none;
-    cursor: pointer;
-  }
-
-  .form-group select option { background: var(--dark-3); }
-
-  .form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
+  .contact-btn-outline:hover { background: var(--gold); color: #000; }
 
   .contact-info {
     margin-top: 48px;
@@ -920,7 +917,7 @@
     .why-visual { display: none; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     #contact .inner { grid-template-columns: 1fr; gap: 60px; }
-    .form-row { grid-template-columns: 1fr; }
+    .contact-actions { padding: 36px 24px; }
   }
 </style>
 </head>
@@ -1153,7 +1150,7 @@
           <div class="contact-icon">📞</div>
           <div class="contact-item-text">
             <h4>Phone</h4>
-            <p>(510) 600-9576</p>
+            <p><a href="tel:+15106009576" style="color: inherit; text-decoration: none;">(510) 600-9576</a></p>
           </div>
         </div>
         <div class="contact-item">
@@ -1180,69 +1177,14 @@
       </div>
     </div>
     <div>
-      <form class="contact-form" id="quoteForm" autocomplete="on">
-        <!-- Web3Forms settings — paste your access key below -->
-        <input type="hidden" name="access_key" value="431a3b15-4948-4901-963d-2428d53eb865">
-        <input type="hidden" name="subject" value="New Quote Request — Prestige Valet Co.">
-        <input type="hidden" name="from_name" value="Prestige Valet Website">
-        <!-- Spam honeypot: leave this exactly as-is -->
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name</label>
-            <input type="text" name="firstName" placeholder="John" required autocomplete="given-name">
-          </div>
-          <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" name="lastName" placeholder="Smith" required autocomplete="family-name">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
-          </div>
-          <div class="form-group">
-            <label>Phone</label>
-            <input type="tel" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Event Type</label>
-            <select name="eventType" required>
-              <option value="" disabled selected>Select type</option>
-              <option>Wedding</option>
-              <option>Corporate Event</option>
-              <option>Private Party</option>
-              <option>Restaurant / Venue</option>
-              <option>Gala / Ceremony</option>
-              <option>Estate Event</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Estimated Guest Count</label>
-            <select name="guestCount">
-              <option value="" disabled selected>Select range</option>
-              <option>Under 50</option>
-              <option>50 – 100</option>
-              <option>100 – 200</option>
-              <option>200 – 300</option>
-              <option>300+</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Event Date</label>
-          <input type="date" name="eventDate">
-        </div>
-        <div class="form-group">
-          <label>Venue & Additional Details</label>
-          <textarea name="details" placeholder="Tell us about your venue, any special requirements, or questions you have..."></textarea>
-        </div>
-        <button type="submit" class="btn-primary" style="border:none; font-family:'Montserrat',sans-serif; width:100%; cursor:pointer;">Send Quote Request</button>
-      </form>
+      <div class="contact-actions">
+        <p class="contact-actions-label">Get Your Quote</p>
+        <h3 class="contact-actions-title">Call, text, or email us directly</h3>
+        <p class="contact-actions-body">Send us your event date, location, and how many cars you're expecting. You'll get a quote back fast.</p>
+        <a href="tel:+15106009576" class="btn-primary contact-btn">📞 Call (510) 600-9576</a>
+        <a href="sms:+15106009576" class="contact-btn contact-btn-outline">💬 Text Us</a>
+        <a href="mailto:vprestige6@gmail.com?subject=Valet%20Quote%20Request" class="contact-btn contact-btn-outline">✉️ Email vprestige6@gmail.com</a>
+      </div>
     </div>
   </div>
 </div>
@@ -1265,38 +1207,6 @@
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  // ---- Contact form submission (Web3Forms) ----
-  const quoteForm = document.getElementById('quoteForm');
-  quoteForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = quoteForm.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: new FormData(quoteForm)
-      });
-      const data = await res.json();
-
-      if (data.success) {
-        btn.textContent = "✦ Request Sent — We'll be in touch within 24 hours";
-        btn.style.background = '#000000';
-        btn.style.color = 'var(--gold)';
-        btn.style.border = '1px solid var(--gold)';
-        quoteForm.reset();
-      } else {
-        throw new Error(data.message || 'Submission failed');
-      }
-    } catch (err) {
-      btn.disabled = false;
-      btn.textContent = originalText;
-      alert('Sorry, something went wrong. Please call (510) 600-9576 or email vprestige6@gmail.com directly.');
-    }
   });
 
   // Fade-in on scroll
